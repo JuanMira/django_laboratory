@@ -1,0 +1,21 @@
+{% extends 'index.html' %} {% block content%}
+<div class="row mt-4">
+  {% for res in movies %}
+  <div class="col-3">
+    <div class="card">
+      <div class="card-header">
+        <h4>{{ res.nombre_pelicula }}</h4>
+      </div>
+      <div class="card">
+        <img src="{{res.imagen}}" style="width: 100%; height: 100%" />
+      </div>
+      <div class="card-footer">
+        <a href="watch/{{res.id}}" class="btn btn-success btn-block text-white"
+          >Ver</a
+        >
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

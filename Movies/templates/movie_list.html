@@ -1,0 +1,30 @@
+{% extends 'index.html' %} {% block content%}
+<div class="row mt-4">
+  <a href="{% url 'nueva_pelicula' %}" class="btn btn-success">Agregar nueva</a>
+  <table class="table mt-4">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre Pelicula</th>
+        <th scope="col">Categoria</th>
+        <th scope="col">Options</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for res in movie %}
+      <tr>
+        <th scope="row">{{res.id}}</th>
+        <td>{{res.nombre_pelicula}}</td>
+        <td>{{res.categoria}}</td>
+        <td>
+          <a href="editar_pelicula/{{res.id}}" class="btn btn-info">Editar</a>
+          <a href="eliminar_pelicula/{{res.id}}" class="btn btn-danger"
+            >Elimnar</a
+          >
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

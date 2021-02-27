@@ -1,0 +1,22 @@
+{% extends 'index.html' %} {% block content %} {% load crispy_forms_tags %}
+<div>
+  <form method="POST">
+    <div class="card">
+      <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6 mt-4">{{movie_form|crispy}}</div>
+      </div>
+
+      <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+          <button class="btn btn-primary btn-block mt-2 my-5" type="submit">
+            Agregar
+          </button>
+        </div>
+      </div>
+    </div>
+    {% csrf_token %}
+  </form>
+</div>
+{%endblock%}

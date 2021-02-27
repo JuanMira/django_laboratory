@@ -1,0 +1,40 @@
+{% extends 'index.html' %} {% block content %}
+<div class="row mt-5">
+  <div class="col-4">
+    <a href="{% url 'new_categorie' %}" class="btn btn-primary">
+      Agregar nuevo
+    </a>
+  </div>
+  <div class="col-4"></div>
+</div>
+<div class="row mt-3">
+  <div class="col-6">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Categoria</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for res in categories %}
+        <tr>
+          <td scope="row">{{res.id}}</td>
+          <td>{{ res.nombre_categoria }}</td>
+          <td>
+            <a href="editar_categoria/{{res.id}}" class="btn btn-info">
+              Editar
+            </a>
+            <a href="eliminar_categoria/{{res.id}}" class="btn btn-danger">
+              Eliminar
+            </a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}

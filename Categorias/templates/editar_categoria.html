@@ -1,0 +1,12 @@
+{% extends 'index.html' %} {% block content %} {% load crispy_forms_tags %}
+<div class="row mt-5">
+  <div class="col-2"></div>
+  <div class="col-8">
+    <form method="POST">
+      {{ categorie_form | crispy}}
+      <button class="btn btn-primary" type="submit">Actualizar</button>
+      {% csrf_token %}
+    </form>
+  </div>
+</div>
+{% endblock %}
